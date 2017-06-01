@@ -15,7 +15,6 @@ const discrimSeeker = () => {
     client.user.setUsername(user.username, config.password);
     if (config.discriminator.indexOf(client.user.discriminator) > -1) {
         console.log("One of your choosen discriminators was selected. Will set your username in 5 minutes. DO NOT EXIT THIS PROGRAM.");
-        client.clearInterval(discrimSeeker);
         client.setTimeout(() => {
             console.log("Setting your username...");
             client.user.setUsername(config.username, config.password);
@@ -29,7 +28,7 @@ const discrimSeeker = () => {
 client.on("ready", () => {
     console.log("Alright, let's do this. Will change your username in 10 seconds.");
     client.setTimeout(() => discrimSeeker(), 10000);
-    const discrimSeeker = client.setInterval(() => discrimSeeker(), 1800000);
+    client.setInterval(() => discrimSeeker(), 1800000);
 });
 
 client.login(config.token);
