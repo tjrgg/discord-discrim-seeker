@@ -9,7 +9,7 @@ const discrimSeeker = async () => {
     let users = client.users.filter(u => u.discriminator === client.user.discriminator);
     if (users.size < 1) {
         console.error("A user wasn't found with your current discriminator, which doesn't allow this selfbot to work. (Join more servers.)");
-        process.exit();
+        process.exit(1);
     }
     let user = users.random();
     try {
@@ -21,11 +21,11 @@ const discrimSeeker = async () => {
                     console.log("Setting your username...");
                     await client.user.setUsername(config.username, config.password);
                     console.log("Username set. Exiting...");
-                    process.exit();
+                    process.exit(1);
                 }
                 catch (e) {
                     console.error("Your username failed to reset to your preferred username. You'll have to manually reset your username.");
-                    process.exit();
+                    process.exit(1);
                 }
             }, 300000);
         }
@@ -35,7 +35,6 @@ const discrimSeeker = async () => {
         console.error("Your username failed to set.");
         console.error(e);
     }
-    
 };
 
 client.on("ready", () => {
