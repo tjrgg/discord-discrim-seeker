@@ -6,7 +6,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client({ fetchAllMembers: true });
 
 client.on("ready", () => {
-    console.log("Alright, let's do this..");
+    console.log("Alright, let's do this. Your username will start changing in 30 minutes.");
     const discrimSeeker = client.setInterval(() => {
         let users = client.users.filter(u => u.discriminator === client.user.discriminator);
         if (users.size < 1) {
