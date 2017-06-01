@@ -1,11 +1,12 @@
+console.log("DISCORD DISCRIM SEEKER || created by Tyler#0130");
+
 const config = require("./config.json");
 
 const Discord = require("discord.js");
 const client = new Discord.Client({ fetchAllMembers: true });
 
 client.on("ready", () => {
-    console.log("DISCORD DISCRIM SEEKER || created by Tyler#0130");
-    console.log("Alright, let's do this. Your username will start changing in 30 minutes.");
+    console.log("Alright, let's do this..");
     const discrimSeeker = client.setInterval(() => {
         let users = client.users.filter(u => u.discriminator === client.user.discriminator);
         if (users.size < 1) {
