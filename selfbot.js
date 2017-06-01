@@ -16,7 +16,7 @@ const discrimSeeker = async () => {
         await client.user.setUsername(user.username, config.password);
         if (config.discriminator.indexOf(client.user.discriminator) > -1) {
             console.log("One of your choosen discriminators was selected. Will set your username in 5 minutes. DO NOT EXIT THIS PROGRAM.");
-            client.setTimeout(() => {
+            client.setTimeout(async () => {
                 try {
                     console.log("Setting your username...");
                     await client.user.setUsername(config.username, config.password);
