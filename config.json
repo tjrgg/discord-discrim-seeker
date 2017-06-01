@@ -1,0 +1,6 @@
+{
+    "discriminator": [ "0001", "9999" ],
+    "username": "YOUR-DISCORD-USERNAME",
+    "password": "YOUR-DISCORD-USER-PASSWORD",
+    "token": "YOUR-DISCORD-USER-TOKEN"
+}
