@@ -7,7 +7,7 @@ const client = new Discord.Client({ fetchAllMembers: true });
 
 const discrimSeeker = async () => {
     let users = client.users.filter(u => u.discriminator === client.user.discriminator);
-    if (users.size < 1) {
+    if (users.size < 2) {
         console.error("A user wasn't found with your current discriminator, which doesn't allow this selfbot to work. (Join more servers.)");
         process.exit(1);
     }
